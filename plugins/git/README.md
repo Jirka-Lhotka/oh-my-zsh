@@ -24,6 +24,7 @@ plugins=(... git)
 | gbd                  | git branch -d                                                                                                                 |
 | gbda                 | git branch --no-color --merged \| command grep -vE "^(\+|\*\|\s*(master\|develop\|dev)\s*$)" \| command xargs -n 1 git branch -d |
 | gbD                  | git branch -D                                                                                                                 |
+| gbDr                  | git fetch -p && for branch in \`git branch -vv --no-color \| grep ': gone]' \| awk '{print $1}'\`; do git branch -D $branch; done                                                                                                                 |
 | gbl                  | git blame -b -w                                                                                                               |
 | gbnm                 | git branch --no-merged                                                                                                        |
 | gbr                  | git branch --remote                                                                                                           |
